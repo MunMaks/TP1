@@ -18,34 +18,42 @@ int main(){
         printf("Combien de jours? \n");
         scanf("%d", &jours);
     }
-
-    while(1){
+    
+    while(1){   //siecles
         if (jours >= 36000){
-            jours -= 36000;
-            ++siecles;
+            jours = jours - 36000;
+            siecles++;
         }
-        else if (jours >= 360){
+        else break;
+    }
+
+    while(1){   //annees
+        if (jours >= 360){
             jours -= 360;
-            ++annees;
+            ++annees; 
         }
-        else if (jours >= 30){
+        else break;
+    }
+    
+    while(1){   //mois
+        if (jours >= 30){
             jours -= 30;
-            ++mois;
+            ++mois; 
         }
-        else if (jours >= 7){
+        else break;
+    }
+        
+    while(1){   //semaines
+        if (jours > 6){
             jours -= 7;
             ++semaines;
         }
-        else 
-            jours_left = jours;
-            jours = 0;
-        if (jours == 0){
-            break;
-        }
-            
+        else break;
+        
     }
-
-
+    //jours restant
+    if (jours < 7) jours_left = jours;
+    
     printf("%d siecle", siecles);
     if (siecles > 1) printf("s");
 
@@ -54,14 +62,12 @@ int main(){
 
     printf(" %d mois ", mois);
 
-    printf("%d annee", semaines); 
+    printf("%d semaine", semaines); 
     if (semaines > 1) printf("s");
 
     printf(" %d jour", jours_left);
-    if (jours_left > 1) printf("s");
-
-    printf("\n");
-
+    if (jours_left > 1) printf("s");    printf("\n");
+    
     return 0;
 }
 
