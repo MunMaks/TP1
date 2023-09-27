@@ -55,19 +55,19 @@ int main(){
     if (jours < 7) jours_left = jours;
     
     printf("%d siecle", siecles);
-    if (siecles > 1) printf("s");
+    if (siecles > 1) printf("s");       // a partir de jours >= 72000
 
     printf(" %d annee", annees); 
-    if (annees > 1) printf("s");
+    if (annees > 1) printf("s");        // a partir de jours >= 720
 
     printf(" %d mois ", mois);
 
-    printf("%d semaine", semaines); 
+    printf("%d semaine", semaines);     // a partir de jours >= 14
     if (semaines > 1) printf("s");
 
     printf(" %d jour", jours_left);
-    if (jours_left > 1) printf("s");    printf("\n");
+    if (jours_left > 1) printf("s");    // a partir de jours >= 2
+    printf("\n");
     
     return 0;
 }
-
